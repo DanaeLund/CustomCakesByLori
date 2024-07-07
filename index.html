@@ -79,11 +79,13 @@
                     https://www.facebook.com/CustomCakesByLori"><img class="social-icon" src="./images/facebook-icon-white.svg" alt="Facebook Icon"></a>
                     <a href="
                     https://www.instagram.com/ldeandyment"><img class="social-icon" src="./images/instagram-icon-white.svg" alt="Instagram Icon"></a>
-                    <a href="https://twitter.com/ldeandymentcake"><img class="social-icon" src="/images/twitter-icon-white.svg" alt="X, previously known as Twitter, Icon"></a>
-                    <a href="https://www.pinterest.ca/ldeandyment"><img class="social-icon" src="/images/pinterest-icon-white.svg" alt="Pinterest Icon"></a>
+
+                    <a href="https://twitter.com/ldeandymentcake"><img class="social-icon" src="./images/twitter-icon-white.svg" alt="X, previously known as Twitter, Icon"></a>
+                    <a href="https://www.pinterest.ca/ldeandyment"><img class="social-icon" src="./images/pinterest-icon-white.svg" alt="Pinterest Icon"></a>
                 </div>
             </div>
-            <nav>
+
+            <nav class="website-navbar">
                 <div class="logo">
                     <img class="logo-round" src="./images/logo.png" alt="Company logo.">
                     <img class="logo-long" src="./images/logo-long.svg" alt="Company name.">
@@ -214,7 +216,6 @@
             </div>
         </div>
         
-
         <section id="image-scroller" class="image-scroller-section">
             <div class="wrapper">
                 <div class="image-scroller-img img-1"><img src="./images/birthday-cake-1.jpg" alt=""></div>
@@ -292,8 +293,8 @@
                         </ul>
                         <ul>
                             <li id="cupcakes" class="list-title"><h4 >Cupcakes</h4></li>
-                            <li><p><strong>Basic Flavor:</strong> <br> Starts at $4.85 each (minimum order: 1 dozen)</p></li>
-                            <li><p><strong>Deluxe Flavor:</strong> <br> Starts at $5.85 each (minimum order: 1 dozen)</p></li>
+                            <li><p><strong>Basic Flavor:</strong> <br> Starts at $4.85 each <br> (minimum order: 1 dozen)</p></li>
+                            <li><p><strong>Deluxe Flavor:</strong> <br> Starts at $5.85 each <br> (minimum order: 1 dozen)</p></li>
                             <li><p><strong>Mini Size:</strong> <br> Starts at $2.50 each</p></li>
                         </ul>
                 </div>
@@ -307,7 +308,7 @@
                     <h3>Cake and Filling Flavours</h3>
                     <div class="flavour-lists">
                         <ul>
-                            <li><h4>Basic Cake Flavours</h4></li>
+                            <li class="list-title"><h4>Basic Cake Flavours</h4></li>
                             <li><p>Chocolate</p></li>
                             <li><p>Vanilla</p></li>
                             <li><p>Oreo</p></li>
@@ -319,13 +320,13 @@
                             <li><p>Pink Velvet</p></li>
                         </ul>
                         <ul>
-                            <li><h4>Deluxe Cake Flavours</h4></li>
+                            <li class="list-title"><h4>Deluxe Cake Flavours</h4></li>
                             <li><p>Carrot</p></li>
                             <li><p>White Chocolate</p></li>
                             <li><p>Upside-Down Pineapple</p></li>
                         </ul>
                         <ul>
-                            <li><h4>Basic Fillings Flavours</h4></li>
+                            <li class="list-title"><h4>Basic Fillings Flavours</h4></li>
                             <li><p>Vanilla Buttercream</p></li>
                             <li><p>Chocolate Buttercream</p></li>
                             <li><p>Mocha Buttercream</p></li>
@@ -334,7 +335,7 @@
                             <li><p>Lemon Buttercream</p></li>
                         </ul>
                         <ul>
-                            <li><h4>Deluxe Fillings Flavours</h4></li>
+                            <li class="list-title"><h4>Deluxe Fillings Flavours</h4></li>
                             <li><p>Lemon Curd</p></li>
                             <li><p>Cream Cheese Buttercream</p></li>
                             <li><p>Chocolate Ganache</p></li>
@@ -351,9 +352,9 @@
                     <h3>Cake Toppers</h3>
                     <p class="subtitle">Enhance your cake with custom toppers made from gumpaste or polymer clay.</p>
                     <ul class="topper-lists">
-                        <li><p><strong>Simple Topper</strong> <br>Starting at $25</p></li>
-                        <li><p><strong>Standard Topper</strong> <br>Starting at $50</p></li>
-                        <li><p><strong>Deluxe Topper</strong> <br>Starting at $100</p></li>
+                        <li id="simple-topper"><p><strong>Simple Topper</strong> <br>Starting at $25</p></li>
+                        <li id="standard-topper"><p><strong>Standard Topper</strong> <br>Starting at $50</p></li>
+                        <li id="deluxe-topper"><p><strong>Deluxe Topper</strong> <br>Starting at $100</p></li>
                     </ul>
                 </div>
         
@@ -370,51 +371,86 @@
                 <h2>Order Your Custom Cake Today!</h2>
                 <p>
                     Ready to make your special occasion unforgettable? 
-                    <br> <br> Let us create a custom cake that perfectly captures your vision and delights your taste buds. We are passionate about turning your ideas into edible masterpieces.</p>
+                    <br> <br> Let us create a custom cake that perfectly captures your vision and delights your taste buds. We are passionate about turning your ideas into edible masterpieces.
+                </p>
             </div>
 
             <div class="contact-form-section">
                 <form id="order-form" action="/submit-order" method="post">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                    <div class="form-personal">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                    
+                    <div class="event-details">
+                        <div class="form-group">
+                            <label for="theme">Theme or Occasion</label>
+                            <input type="text" id="theme" name="theme" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget</label>
+                            <input type="number" id="budget" name="budget" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Delivery or Pickup Date</label>
+                            <input type="date" id="date" name="date" required">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
+
+                    <div class="cake-details">
+                        <div class="form-group">
+                        <label for="cake-sizes">Choose a cake size:</label>
+                        <select id="cake-sizes" name="cake-sizes">
+                            <option value="" disabled selected>Select a cake size</option>
+                            <optgroup label="Standard Cakes">
+                                <option value="4-inch">4" Cake</option>
+                                <option value="6-inch">6" Cake</option>
+                                <option value="8-inch">8" Cake</option>
+                                <option value="10-inch">10" Cake</option>
+                                <option value="12-inch">12" Cake</option>
+                            </optgroup>
+                            <optgroup label="Two-Tiered Cakes">
+                                <option value="4-6-inch">4" + 6" Cake</option>
+                                <option value="6-8-inch">6" + 8" Cake</option>
+                                <option value="8-10-inch">8" + 10" Cake</option>
+                            </optgroup>
+                            <optgroup label="Three-Tiered Cakes">
+                                <option value="4-6-8-inch">4" + 6" + 8" Cake</option>
+                                <option value="6-8-10-inch">6" + 8" + 10" Cake</option>
+                                <option value="8-10-12-inch">8" + 10" + 12" Cake</option>
+                            </optgroup>
+                            <optgroup label="Smash Cakes">
+                                <option value="smash-cake">6" Smash Cake</option>
+                            </optgroup>
+                            <optgroup label="Cupcakes">
+                                <option value="basic-cupcake">Standard Size Cupcake</option>
+                                <option value="basic-cupcake">Mini Cupcake</option>
+                            </optgroup>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label for="servings">Number of Servings</label>
-                        <input type="number" id="servings" name="servings" required>
+                        <div class="form-group">
+                            <label for="flavors">Preferred Flavors</label>
+                            <input type="text" id="flavors" name="flavors" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="additional-details">Additional Styling Details</label>
+                            <textarea id="additional-details" name="additional-details" rows="4"></textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="theme">Theme or Occasion</label>
-                        <input type="text" id="theme" name="theme" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="budget">Budget</label>
-                        <input type="number" id="budget" name="budget" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="flavors">Preferred Flavors</label>
-                        <input type="text" id="flavors" name="flavors" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Delivery or Pickup Date</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="additional-details">Additional Details</label>
-                        <textarea id="additional-details" name="additional-details" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="order-button">Submit Your Request</button>
                 </form>
+                <button type="submit" class="order-btn">Place an Order</button>
         
-                <p class="disclaimer">* A non-refundable deposit is required to secure your order. We'll get back to you within 24 hours with a personalized quote and sketch.</p>
+                <p>* A non-refundable deposit is required to secure your order. <br> We'll get back to you within 24 hours with a personalized quote and sketch.</p>
             </div>
         </section>
 

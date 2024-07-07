@@ -14,6 +14,9 @@
     --social-container-height: 75px;
     --nav-height: 100px;
     --header-height: calc(var(--social-container-height) + var(--nav-height));
+
+    --mobile-nav-height: 200px;
+    --mobile-header-height: calc(var(--social-container-height) + var(--mobile-nav-height));
 }
 
 body {
@@ -26,30 +29,29 @@ body {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 32px; /* 2rem * 16px */
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: 28px; /* 1.75rem * 16px */
 }
 
 h4 {
-    font-size: 1.5rem;
+    font-size: 24px; /* 1.5rem * 16px */
 }
 
 h5 {
-    font-size: 1.25rem;
+    font-size: 20px; /* 1.25rem * 16px */
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 19.2px; /* 1.2rem * 16px */
 }
+
 
 .content-wrapper {
     position: static;
-    max-width: 1400px;
-    min-width: 1200px;
-    margin: auto;
+    margin-inline: 80px
 }
 
 ul {
@@ -60,13 +62,13 @@ ul {
 
 /* HEADER SECTION  */
 header {
-    min-width: 550px;
     height: 175px;
 
     z-index: 999;
 }
 
 header .social-icon-container {
+    display: flex;
     height: 75px;
 
     background-color: var(--black);
@@ -99,7 +101,8 @@ header .social-icon-container {
     height: 25px;
 }
 
-nav {
+/* NAVBAR  */
+.website-navbar {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -112,7 +115,7 @@ nav {
     height: 100px;
 }
 
-nav .logo {
+.website-navbar .logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -120,29 +123,31 @@ nav .logo {
     gap: 20px;
 }
 
-nav .logo .logo-round {
+.website-navbar .logo .logo-round {
     width: 75px;
     border-radius: 50%;
 }
 
-nav .logo .logo-long {
-    height: 125px;
+.website-navbar .logo .logo-long {
+    height: 100px;
 }
 
-nav .menu {
+.website-navbar .menu {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
 
     list-style: none;
 }
 
-nav ul li {
+.website-navbar ul li {
     padding-left: 19px;
     /* border-left: solid 1px var(--black); */
 }
 
-nav ul li a {
+.website-navbar ul li a {
     text-decoration: none;
     line-height: 62px;
     color: var(--black);
@@ -182,6 +187,55 @@ nav ul li a {
     border: solid 1px var(--white);
 }
 
+/* MOBILE NAVBAR  */
+
+.mobile-navbar {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px 5px 0px 0px;
+    background-color: var(--bg-color);
+
+    padding-inline: 40px;
+    height: 200px;
+}
+
+.mobile-navbar .mobile-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.mobile-navbar .mobile-logo .logo-combined {
+    width: 75px;
+    border-radius: 50%;
+}
+
+.mobile-navbar .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    list-style: none;
+}
+
+.mobile-navbar ul li {
+    padding-left: 19px;
+    /* border-left: solid 1px var(--black); */
+}
+
+.mobile-navbar ul li a {
+    text-decoration: none;
+    line-height: 62px;
+    color: var(--black);
+}
+
 /* HERO SECTION  */
 .image-carousel-section {
     position: static;
@@ -204,7 +258,9 @@ nav ul li a {
     text-align: center;
 
     color: var(--black);
+    margin-inline: 40px;
 }
+
 .hero-text .review-embed {
     padding-block: 1rem;
 }
@@ -219,6 +275,7 @@ nav ul li a {
 }
 
 .image-carousel-box {
+    display: block;
     position: relative;
 
     height: 100%;
@@ -307,7 +364,6 @@ nav ul li a {
     grid-template-rows: repeat(1, 100%);
     gap: 1rem;
 
-    height: 600px;
     width: 100%;
     border-radius: 5px;
     background-color: var(--black);
@@ -332,7 +388,8 @@ nav ul li a {
 }
 
 .highlight-card > img {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
 }
 
 .highlight-card .title {
@@ -344,12 +401,8 @@ nav ul li a {
 }
 
 /* MEDIA SCROLLER SECTION  */
-
-/* UNDER CONSTRUCTION */
 .image-scroller-section{
     position: static;
-    bottom: 0px;
-    left: 0px;
 
     background-color: var(--bg-color);
     background-color: var(--black);
@@ -525,9 +578,6 @@ nav ul li a {
     color: var(--black);
 }
 
-
-
-
 /* MENU SECTION  */
 
 .menu-section {
@@ -552,7 +602,7 @@ nav ul li a {
     font-weight: normal;
 }
 
-.menu-subsection .steps-list{
+.menu-subsection .steps-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -600,8 +650,6 @@ nav ul li a {
 .menu-section .menu-subsection .cake-sizes-lists {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
-    min-width: fit-content;
 }
 
 .menu-section .menu-subsection .cake-sizes-lists li {
@@ -687,18 +735,44 @@ nav ul li a {
     min-width: fit-content;
 }
 
-.menu-section .menu-subsection .flavour-lists ul {
+.menu-section .menu-subsection .flavour-lists ul li{
     display: flex;
     flex-direction: column;
     align-items: center;
 
     border-radius: 5px;
     background-color: var(--bg-color);
+    background-image: url(./images/pattern.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
     box-shadow: 
         inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
         inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
     padding: 1rem;
     margin: 1rem;
+}
+
+.menu-section .menu-subsection .flavour-lists .list-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+    background-color: var(--main-color);
+    background-image: url(./images/pattern.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    box-shadow: 
+        inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
+        inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
+    padding: 1rem;
+    margin: 1rem;
+    min-height: 150px;
 }
 
 .menu-section .menu-subsection .topper-lists {
@@ -717,6 +791,89 @@ nav ul li a {
     align-items: center;
 
     color: var(--black);
+
+    background-color: var(--bg-color);
+    
+    border-radius: 5px;
+    box-shadow: 
+        inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
+        inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.menu-section .menu-subsection .topper-lists #simple-topper{
+    background-color: var(--bg-color);
+}
+.menu-section .menu-subsection .topper-lists #standard-topper{
+    border-radius: 5px;
+    background-color: var(--main-color);
+    background-image: none;
+
+}
+.menu-section .menu-subsection .topper-lists #deluxe-topper{
+    border-radius: 5px;
+    background-color: var(--main-color);
+    background-image: url(./images/pattern.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+}
+
+/* ORDER NOW SECTION */
+
+.order-now-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    
+    color: var(--black);
+}
+
+.order-now-section .text-box {
+    text-align: center;
+
+    border-radius: 5px;
+    background-color: var(--main-color);
+    background-image: url(./images/pattern.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    box-shadow: 
+        inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
+        inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.order-now-section .contact-form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    background-color: var(--main-color);
+    background-image: url(./images/pattern.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    box-shadow: 
+        inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
+        inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.order-now-section .contact-form-section form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.order-now-section .contact-form-section form > div {
     border-radius: 5px;
     background-color: var(--bg-color);
     box-shadow: 
@@ -726,18 +883,35 @@ nav ul li a {
     margin: 1rem;
 }
 
-/* ORDER NOW SECTION */
+.order-now-section .contact-form-section .form-group {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+}
 
-.order-now-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
+.order-now-section .contact-form-section .form-group {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+}
+
+.order-now-section .contact-form-section .order-btn {
     width: 100%;
+    height: 62px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--black);
+
+    color: var(--white);
+    font-size: 1rem;
 }
 
-.order-now-section .text-box {
-    text-align: center;
+.order-now-section .contact-form-section .order-btn:hover {
+    color: var(--black);
+    background-color: var(--white);
+    border: solid 1px var(--black);
 }
+
 
 
 /* FOOTER SECTION */
@@ -832,3 +1006,175 @@ nav ul li a {
         right: -200px;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .content-wrapper {
+        position: static;
+        margin: auto 20px;
+    }
+
+    header {
+        display: none;
+    }
+
+    .image-carousel-section {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    
+        min-width: 200px;
+        width: 100%;
+        height: 100vh;
+    
+        border-radius: 0px 0px 5px 5px;
+        background-color: var(--bg-color);
+    }
+
+    .image-carousel-box {
+        display: none;
+    }
+    
+    .menu-section .menu-subsection .topper-lists {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0rem;
+    
+        color: var(--white);
+    
+        min-width: fit-content;
+    }
+
+    .order-now-section .contact-form-section form {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+
+    header {
+        height: 75px;
+    
+        z-index: 999;
+    }
+
+    .website-navbar {
+        display: none;
+    }
+
+    .image-carousel-section {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 100vh);
+    
+        min-width: none;
+        width: 100%;
+    
+        border-radius: 0px 0px 5px 5px;
+        background-color: var(--bg-color);
+    }
+
+    .image-carousel-box > ul > li > img {
+        width: 100%;
+        object-fit: fill;
+        object-position: center;
+    }
+
+    /* HIGHLIGHT SECTION  */
+
+    .highlight-section {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    /* TESTIMONIAL SECTION  */
+
+    .testimonial-section {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    /* MENU SECTION  */
+
+    .menu-subsection .steps-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 1rem;
+        margin-inline: 1rem;
+    }
+
+    .menu-section .menu-subsection .cake-sizes-lists {
+        display: block;
+    
+        min-width: fit-content;
+        border-radius: 5px;
+        background-color: var(--bg-color);
+        background-image: url(./images/pattern.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: soft-light;
+        box-shadow: 
+            inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
+            inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .menu-section .menu-subsection .cake-sizes-lists li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border-radius: none;
+        background-color: none;
+        background-image: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-section .menu-subsection .flavour-lists {
+        display: block;
+    
+        min-width: fit-content;
+        border-radius: 5px;
+        background-color: var(--bg-color);
+        background-image: url(./images/pattern.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: soft-light;
+        box-shadow: 
+            inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
+            inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .menu-section .menu-subsection .flavour-lists ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border-radius: none;
+        background-color: none;
+        background-image: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+
+    .order-now-section {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        
+        color: var(--black);
+    }
+
+  }
