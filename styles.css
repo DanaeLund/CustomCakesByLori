@@ -254,7 +254,7 @@ header .social-icon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
 
     color: var(--black);
@@ -1021,7 +1021,7 @@ header .social-icon-container {
         position: static;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     
         min-width: 200px;
         width: 100%;
@@ -1031,10 +1031,6 @@ header .social-icon-container {
         background-color: var(--bg-color);
     }
 
-    .image-carousel-box {
-        display: none;
-    }
-    
     .menu-section .menu-subsection .topper-lists {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -1063,15 +1059,16 @@ header .social-icon-container {
     .website-navbar {
         display: none;
     }
-
+    
     .image-carousel-section {
         position: static;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(2, 100vh);
+        grid-template-rows: repeat(2, 1fr);
     
-        min-width: none;
+        min-width: 200px;
         width: 100%;
+        height: 100vh;
     
         border-radius: 0px 0px 5px 5px;
         background-color: var(--bg-color);
