@@ -324,9 +324,6 @@ header .social-icon-container {
 .image-carousel-box > ul {
     height: 100%;
     width: 100%;
-
-    padding: 0;
-    margin: 0;
 }
 
 .image-carousel-box > ul > li {
@@ -346,7 +343,7 @@ header .social-icon-container {
 }
 
 .image-carousel-box > ul > li > img {
-    width: 80%;
+    width: 100%;
     object-fit: fill;
     object-position: center;
 }
@@ -1093,6 +1090,14 @@ header .social-icon-container {
         align-items: center;
         justify-content: center;
         gap: 1rem;
+    }
+
+    #about-us-section .about-text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 10px;
     }
 
     .menu-section .menu-subsection .topper-lists {
