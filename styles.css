@@ -60,6 +60,16 @@ ul {
     padding: 0;
 }
 
+#cta-btn {
+    color: var(--white);
+    text-decoration: none;
+
+    background-color: var(--black);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+
 /* HEADER SECTION  */
 header {
     height: 175px;
@@ -153,40 +163,6 @@ header .social-icon-container {
     color: var(--black);
 }
 
-.order-btn {
-    width: 144px;
-    height: 62px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--black);
-
-    color: var(--white);
-    font-size: 1rem;
-}
-
-.order-btn:hover {
-    color: var(--black);
-    background-color: var(--white);
-    border: solid 1px var(--black);
-}
-
-.order-btn-white {
-    width: 144px;
-    height: 62px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--white);
-
-    color: var(--black);
-    font-size: 1rem;
-}
-
-.order-btn-white:hover {
-    color: var(--white);
-    background-color: var(--black);
-    border: solid 1px var(--white);
-}
-
 /* MOBILE NAVBAR  */
 
 .mobile-navbar {
@@ -262,17 +238,36 @@ header .social-icon-container {
 }
 
 .hero-text .review-embed {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
     padding-block: 1rem;
+}
+
+.hero-text .review-embed p{
+    background-color: var(--main-color);
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+}
+
+.hero-text .review-embed p:hover{
+    background-color: var(--black);
+}
+
+.hero-text .review-embed p:hover a{
+    color: var(--white);
+}
+
+.hero-text .review-embed a{
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1rem;
 }
 
 .hero-text .logo-combined{
     width: 40%;
 }
 
-.placeholder-hero {
-    height: 100%;
-    width: 100%;
-}
 
 .image-carousel-box {
     display: block;
@@ -351,7 +346,7 @@ header .social-icon-container {
 }
 
 .image-carousel-box > ul > li > img {
-    width: 100%;
+    width: 80%;
     object-fit: fill;
     object-position: center;
 }
@@ -578,6 +573,49 @@ header .social-icon-container {
     color: var(--black);
 }
 
+#about-us-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+    background-color: var(--bg-color);
+    box-shadow: 
+        inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
+        inset 0 -10px 10px rgb(0, 0, 0, 0.25); 
+    border-radius: 5px;
+    padding: 40px;
+    margin-top: 1rem;
+    
+    color: var(--black);
+    text-align: center;
+}
+
+#about-us-section .about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#about-us-section .about-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 80px;
+}
+
+#about-us-section .about-us-img img {
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
 /* MENU SECTION  */
 
 .menu-section {
@@ -586,11 +624,6 @@ header .social-icon-container {
     border-radius: 5px;
     color: var(--black);
     text-align: center;
-    padding-bottom: 40px;
-}
-
-.menu-subsection {
-    padding-top: 1rem;
 }
 
 .menu-section h2, .menu-section h3{
@@ -659,11 +692,6 @@ header .social-icon-container {
 
     border-radius: 5px;
     background-color: var(--bg-color);
-    background-image: url(./images/pattern.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: soft-light;
     box-shadow: 
         inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
         inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
@@ -688,7 +716,7 @@ header .social-icon-container {
 }
 
 #standard-cakes {
-    background-image: url(./images/1-tier-img.svg);
+    background-image: url(./images/icons/1-tier-img.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -696,7 +724,7 @@ header .social-icon-container {
 }
 
 #two-tier-cakes {
-    background-image: url(./images/2-tier-img.svg);
+    background-image: url(./images/icons/2-tier-img.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -704,7 +732,7 @@ header .social-icon-container {
 }
 
 #three-tier-cakes {
-    background-image: url(./images/3-tier-img.svg);
+    background-image: url(./images/icons/3-tier-img.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -712,15 +740,14 @@ header .social-icon-container {
 }
 
 #cupcakes {
-    background-image: url(./images/cupcake-img.svg);
-    background-position: center;
+    background-image: url(./images/icons/cupcake-img.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-blend-mode: soft-light
 }
 
 #smash-cakes {
-    background-image: url(./images/smash-cake-img.svg);
+    background-image: url(./images/icons/smash-cake-img.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -742,7 +769,7 @@ header .social-icon-container {
 
     border-radius: 5px;
     background-color: var(--bg-color);
-    background-image: url(./images/pattern.png);
+    background-image: url(./images/icons/pattern.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -762,7 +789,7 @@ header .social-icon-container {
 
     border-radius: 5px;
     background-color: var(--main-color);
-    background-image: url(./images/pattern.png);
+    background-image: url(./images/icons/pattern.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -814,7 +841,7 @@ header .social-icon-container {
 .menu-section .menu-subsection .topper-lists #deluxe-topper{
     border-radius: 5px;
     background-color: var(--main-color);
-    background-image: url(./images/pattern.png);
+    background-image: url(./images/icons/pattern.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -835,7 +862,7 @@ header .social-icon-container {
 
     border-radius: 5px;
     background-color: var(--main-color);
-    background-image: url(./images/pattern.png);
+    background-image: url(./images/icons/pattern.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -855,7 +882,7 @@ header .social-icon-container {
 
     border-radius: 5px;
     background-color: var(--main-color);
-    background-image: url(./images/pattern.png);
+    background-image: url(./images/icons/pattern.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -875,12 +902,20 @@ header .social-icon-container {
 
 .order-now-section .contact-form-section form > div {
     border-radius: 5px;
-    background-color: var(--bg-color);
+    background-color: var(--white);
     box-shadow: 
         inset 0 10px 10px rgba(255, 255, 255, 0.25), /* White shadow inside at the top */
         inset 0 -10px 10px rgb(0, 0, 0, 0.1); 
     padding: 1rem;
     margin: 1rem;
+}
+
+.order-now-section .contact-form-section form input, .order-now-section .contact-form-section form textarea, .order-now-section .contact-form-section form select {
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0.5rem;
 }
 
 .order-now-section .contact-form-section .form-group {
@@ -896,14 +931,17 @@ header .social-icon-container {
 }
 
 .order-now-section .contact-form-section .order-btn {
-    width: 100%;
     height: 62px;
     border-radius: 5px;
     border: none;
     background-color: var(--black);
+}
 
+.order-now-section .contact-form-section .order-btn a{
+    text-decoration: none;
     color: var(--white);
     font-size: 1rem;
+    padding: 1rem;
 }
 
 .order-now-section .contact-form-section .order-btn:hover {
@@ -912,6 +950,31 @@ header .social-icon-container {
     border: solid 1px var(--black);
 }
 
+.order-now-section .contact-form-section .order-btn:hover a{
+    color: var(--black);
+}
+
+/* IMAGE GALLERY SECTION  */
+
+.image-gallery .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.image-gallery .image-container .image {
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+}
+
+.image-gallery .image-container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 
 /* FOOTER SECTION */
@@ -929,8 +992,13 @@ header .social-icon-container {
 }
 
 .footer-content a {
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-decoration: none;
+    color: var(--white);
+}
+
+.footer-content p {
+    font-size: 0.9rem;
     color: var(--white);
 }
 
@@ -940,6 +1008,7 @@ header .social-icon-container {
 
 .footer-section-1 .footer-header, .footer-section-2 .footer-header {
     font-size: 2rem;
+    text-align: center;
     /* font-weight: bold; */
 }
 
@@ -966,8 +1035,9 @@ header .social-icon-container {
     padding-block: 0.5rem;
 }
 
-.footer .footer-section-2 li {
-    padding-block: 0.5rem;
+.footer .footer-section-2 li {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .footer .footer-section-4 {
@@ -1007,28 +1077,22 @@ header .social-icon-container {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .content-wrapper {
         position: static;
-        margin: auto 20px;
+        margin: auto 10px;
     }
 
     header {
         display: none;
     }
 
-    .image-carousel-section {
-        position: static;
+    #about-us-section .about-content {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-    
-        min-width: 200px;
-        width: 100%;
-        height: 100vh;
-    
-        border-radius: 0px 0px 5px 5px;
-        background-color: var(--bg-color);
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .menu-section .menu-subsection .topper-lists {
@@ -1049,6 +1113,11 @@ header .social-icon-container {
 }
 
 @media screen and (max-width: 1300px) {
+
+    .content-wrapper {
+        position: static;
+        margin: auto 20px;
+    }
 
     header {
         height: 75px;
@@ -1098,8 +1167,8 @@ header .social-icon-container {
 
     .menu-subsection .steps-list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, auto);
         gap: 1rem;
         margin-inline: 1rem;
     }
@@ -1110,7 +1179,7 @@ header .social-icon-container {
         min-width: fit-content;
         border-radius: 5px;
         background-color: var(--bg-color);
-        background-image: url(./images/pattern.png);
+        background-image: url(./images/icons/pattern.png);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -1141,7 +1210,7 @@ header .social-icon-container {
         min-width: fit-content;
         border-radius: 5px;
         background-color: var(--bg-color);
-        background-image: url(./images/pattern.png);
+        background-image: url(./images/icons/pattern.png);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -1167,11 +1236,10 @@ header .social-icon-container {
     }
     
 
-    .order-now-section {
+    .order-now-section .contact-form-section form {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        
-        color: var(--black);
+        gap: 1rem;
     }
 
   }
